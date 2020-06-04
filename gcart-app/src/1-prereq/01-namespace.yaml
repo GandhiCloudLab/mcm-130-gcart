@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mcm-gcart-channel-ns
+  labels:
+    app:  mcm-gcart-application
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mcm-gcart-subscription-ns
+  labels:
+    app:  mcm-gcart-application
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mcm-gcart-app-ns
+  labels:
+    app:  mcm-gcart-application

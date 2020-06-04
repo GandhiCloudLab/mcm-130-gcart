@@ -1,0 +1,13 @@
+---
+apiVersion: app.ibm.com/v1alpha1
+kind: Channel
+metadata:
+  name: mcm-gcart-channel
+  namespace: mcm-gcart-channel-ns
+  labels:
+    app: mcm-gcart-application
+spec:
+  type: Namespace
+  pathname: mcm-gcart-channel-ns
+  sourceNamespaces:
+    - mcm-gcart-app-ns

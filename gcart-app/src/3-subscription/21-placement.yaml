@@ -1,0 +1,16 @@
+---
+apiVersion: app.ibm.com/v1alpha1
+kind: PlacementRule
+metadata:
+  name: mcm-gcart-web
+  namespace: mcm-gcart-subscription-ns
+  labels:
+    app: mcm-gcart-application
+spec:
+  clusterReplicas: 1
+  clusterLabels:
+    matchExpressions:
+      - key: name
+        operator: In
+        values:
+        - gsi-ocp311-mcm-a

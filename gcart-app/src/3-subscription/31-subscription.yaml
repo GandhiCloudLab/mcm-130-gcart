@@ -1,0 +1,27 @@
+---
+apiVersion: app.ibm.com/v1alpha1
+kind: Subscription
+metadata:
+  name: subscription-mcm-gcart-web
+  namespace: mcm-gcart-subscription-ns
+  labels:
+    app: mcm-gcart-application
+spec:
+  channel: mcm-gcart-channel-ns/mcm-gcart-channel
+  packageFilter:
+    version: ">=1.x"
+    labelSelector:
+      matchLabels:
+        app: mcm-gcart-application
+        subApp: web
+  placement:
+    placementRef:
+      name: mcm-gcart-web
+      kind: PlacementRule
+      group: app.ibm.com
+  overrides:
+  - clusterName: "/"
+    clusterOverrides:
+    - path: "metadata.namespace"
+      value: mcm-gcart-app-ns      
+  
